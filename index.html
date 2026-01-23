@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFCCI Silver Jubilee | Chosen to Bear Fruit</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#062421',
+                        harvest: '#f26522',
+                        cream: '#f3e5ab',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #062421;
+            color: #f3e5ab;
+        }
+        .font-black { font-weight: 900; }
+        .tracking-tighter { letter-spacing: -0.05em; }
+        
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in-up 1s ease-out forwards;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #062421; }
+        ::-webkit-scrollbar-thumb { background: #f26522; border-radius: 10px; }
+
+        .gradient-text {
+            background: linear-gradient(to bottom, #f3e5ab, #f3e5ab, #f26522);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-harvest selection:text-cream">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="h-10 flex items-center">
+    			<img src="HD LOGO OUTLINE with laman white.png" alt="DFCCI Logo" class="h-full object-contain">
+		</div>
+                <span class="text-cream font-black tracking-tighter text-xl uppercase">
+                    DFCCI <span class="text-harvest">25th</span>
+                </span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-cream/80 hover:text-harvest transition-colors font-medium text-sm uppercase tracking-widest">Home</a>
+                <a href="#Kit" class="text-cream/80 hover:text-harvest transition-colors font-medium text-sm uppercase tracking-widest">Anniversary Kit</a>
+                <a href="#Kit" class="text-cream/80 hover:text-harvest transition-colors font-medium text-sm uppercase tracking-widest">Programme</a>
+                <a href="#find-us" class="text-cream/80 hover:text-harvest transition-colors font-medium text-sm uppercase tracking-widest">Find Us</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-cream">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-forest border-t border-harvest/20 p-6 flex flex-col gap-4">
+            <a href="#home" class="mobile-link text-cream text-lg font-bold uppercase tracking-widest">Home</a>
+            <a href="#Kit" class="mobile-link text-cream text-lg font-bold uppercase tracking-widest">Anniversary Kit</a>
+            <a href="#programme" class="mobile-link text-cream text-lg font-bold uppercase tracking-widest">Programme</a>
+            <a href="#find-us" class="mobile-link text-cream text-lg font-bold uppercase tracking-widest">Find Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex flex-col items-center justify-center pt-24 px-6 overflow-hidden">
+        <!-- Ambient Glows -->
+        <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-harvest/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cream/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="relative z-10 text-center max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cream/20 bg-cream/5 text-cream text-xs font-bold uppercase tracking-[0.3em] mb-8 animate-fade-in">
+                <i data-lucide="leaf" class="w-3 h-3 text-harvest"></i>
+                Silver Jubilee • February 8, 2026
+            </div>
+            
+            <!-- Typographic Emblem -->
+            <div class="mb-6 flex justify-center">
+                <img 
+                    src="DFCCI 25th Church Anniversary - Shirt Design.png" 
+                    alt="Chosen to Bear Fruit — Jubilee Emblem"
+                    class="w-[280px] sm:w-[360px] md:w-[520px] lg:w-[620px] xl:w-[700px] h-auto"
+                >
+            </div>
+            
+            <p class="text-cream/70 text-lg md:text-2xl font-medium italic max-w-2xl mx-auto leading-relaxed">
+                "You did not choose me, but I chose you and appointed you so that you might go and bear fruit—fruit that will last."
+                <span class="block mt-4 text-harvest font-bold non-italic uppercase tracking-widest text-sm">— John 15:16</span>
+            </p>
+
+            <!-- Countdown -->
+            <div class="flex gap-3 md:gap-6 mt-12 justify-center">
+                <div class="flex flex-col items-center">
+                    <div class="bg-cream/10 backdrop-blur-sm border border-cream/20 w-16 h-16 md:w-24 md:h-24 rounded-2xl flex items-center justify-center mb-2">
+                        <span id="days" class="font-mono text-2xl md:text-5xl font-black text-harvest">00</span>
+                    </div>
+                    <span class="text-cream/60 text-[10px] md:text-xs uppercase font-bold tracking-[0.2em]">Days</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-cream/10 backdrop-blur-sm border border-cream/20 w-16 h-16 md:w-24 md:h-24 rounded-2xl flex items-center justify-center mb-2">
+                        <span id="hours" class="font-mono text-2xl md:text-5xl font-black text-harvest">00</span>
+                    </div>
+                    <span class="text-cream/60 text-[10px] md:text-xs uppercase font-bold tracking-[0.2em]">Hours</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-cream/10 backdrop-blur-sm border border-cream/20 w-16 h-16 md:w-24 md:h-24 rounded-2xl flex items-center justify-center mb-2">
+                        <span id="minutes" class="font-mono text-2xl md:text-5xl font-black text-harvest">00</span>
+                    </div>
+                    <span class="text-cream/60 text-[10px] md:text-xs uppercase font-bold tracking-[0.2em]">Mins</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-cream/10 backdrop-blur-sm border border-cream/20 w-16 h-16 md:w-24 md:h-24 rounded-2xl flex items-center justify-center mb-2">
+                        <span id="seconds" class="font-mono text-2xl md:text-5xl font-black text-harvest">00</span>
+                    </div>
+                    <span class="text-cream/60 text-[10px] md:text-xs uppercase font-bold tracking-[0.2em]">Secs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kit & Programme (12-Column Grid) -->
+    <section id="Kit" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-stretch">
+
+            <!-- Digital Companion Sidebar (Col 1–4) -->
+            <div class="lg:col-span-4 flex">
+                <div class="rounded-3xl p-6 space-y-6 bg-black/40 backdrop-blur-md border border-cream/10 h-full w-full flex flex-col">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="sparkles" class="text-harvest w-5 h-5"></i>
+                        <h3 class="text-cream font-black uppercase tracking-widest text-xs">
+                            Anniversary Kit
+                        </h3>
+                    </div>
+
+                    <!-- Event Poster Image -->
+                    <a 
+                        href="1.png" 
+                        target="_blank"
+                        class="relative group cursor-zoom-in block"
+                    >
+                        <div class="absolute -inset-1 bg-gradient-to-r from-harvest/50 to-cream/20 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                        <div class="relative aspect-[3/4] rounded-xl overflow-hidden border border-cream/20 bg-black/40">
+                            <img 
+                                src="1.png" 
+                                alt="DFCCI Silver Jubilee Poster" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                                <span class="text-cream font-black uppercase tracking-tighter text-xl">Official Anniversary Poster</span>
+                                <span class="text-harvest text-[10px] font-mono tracking-widest uppercase mt-1">Click to view high-res</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Typographic Emblem Image -->
+                    <div class="relative group mt-6">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-cream/20 to-harvest/30 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                        <div class="relative aspect-square rounded-xl overflow-hidden border border-cream/20 bg-black/60 flex flex-col items-center justify-center p-4 text-center">
+                            <!-- Emblem Image Content -->
+                            <div class="w-full h-full rounded-full overflow-hidden border-2 border-dashed border-harvest/30 p-2">
+                                <img 
+                                    src="DFCCI 25th Church Anniversary - Shirt Design.png" 
+                                    alt="DFCCI Jubilee Typographic Emblem" 
+                                    class="w-full h-full object-contain group-hover:rotate-12 transition-transform duration-500"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spotify Link -->
+                    <a href="https://open.spotify.com/playlist/7zCjR3PA3Uf4DgF7yEfWdA?pi=LroZYaTaTr6H2"
+                    target="_blank"
+                    class="flex items-center justify-between p-4 rounded-2xl bg-black/40 border border-cream/10 hover:border-harvest/50 hover:bg-black/60 transition-all group">
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#1DB954]/20 flex items-center justify-center text-[#1DB954]">
+                                <i data-lucide="music" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-cream text-xs font-bold uppercase tracking-widest">
+                                    Song Playlist
+                                </div>
+                                <div class="text-cream/40 text-[10px] font-mono">
+                                    Listen on Spotify
+                                </div>
+                            </div>
+                        </div>
+
+                        <i data-lucide="external-link" class="w-4 h-4 text-cream/20 group-hover:text-harvest"></i>
+                    </a>
+
+                    <!-- Program Download -->
+                    <a href="program.png"
+                    download
+                    class="flex items-center justify-between p-4 rounded-2xl bg-black/40 border border-cream/10 hover:border-harvest/50 hover:bg-black/60 transition-all group">
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-harvest/20 flex items-center justify-center text-harvest">
+                                <i data-lucide="file-text" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-cream text-xs font-bold uppercase tracking-widest">
+                                    Anniversary Program
+                                </div>
+                                <div class="text-cream/40 text-[10px] font-mono">
+                                    Download IMG
+                                </div>
+                            </div>
+                        </div>
+
+                        <i data-lucide="download" class="w-4 h-4 text-cream/20 group-hover:text-harvest"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Programme (Col 8 to 12) -->
+            <div id="programme" class="lg:col-span-8 flex">
+                <div class="bg-cream/5 border border-cream/10 rounded-3xl p-8 h-full w-full flex flex-col">
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 class="text-cream text-2xl font-black uppercase">PROGRAMME</h2>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Call to Worship/Emcee</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Sis. Karla Ancheta</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Opening Prayer</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Ptr. Ariel Bayudan</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Welcome Address</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Ptr. Victoriano Garcia</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Opening Song</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Sis. Edenia Damian</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Dance Presentation</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">DFCCI Kids and Mothers</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Video Presentation</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Church History</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Congregational Worship</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">DFCCI Music Team</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Scripture Reading</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Bro. Rolando Damian</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Introduction of the Speaker</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Sis. Priscilla Escama</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Sermon</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Rev. Ruel Cruz</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Song Presentation</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">DFCCI Youth</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Song of Thanksgiving</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">DFCCI Music Team</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Prayer of Thanksgiving</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Ptra. Nobleza Bayudan</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Words of Encouragement</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">VM Constante Agbayani</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Photo Opportunity</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Group Photo on Stage</span>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Closing Prayer and Benediction</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Ptr. Victoriano Garcia</span>
+                        </div><div class="flex gap-4 group">
+                            <div class="font-mono text-harvest text-sm pt-1 shrink-0">Lunch Fellowship</div>
+                            <span class="text-cream font-bold leading-tight group-hover:text-harvest transition-colors">Food will be served shortly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section id="find-us" class="py-24 px-6 bg-black relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-harvest/5 rounded-full blur-[150px]"></div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-5xl font-black text-cream uppercase tracking-tighter mb-6">Find Us</h2>
+                <p class="text-cream/60 text-xl mb-8 leading-relaxed">Come and worship with us in the welcoming community of DFCCI Pangasinan, where our Church stands as a living testimony of God’s faithfulness through the years.</p>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-start gap-4 text-cream">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-harvest shrink-0"></i>
+                        <div>
+                            <div class="font-bold text-lg uppercase tracking-widest">DFCCI Pangasinan Church</div>
+                            <div class="text-sm opacity-60">Sapdaan-Tocok, San Fabian, Pangasinan</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/xMU8pQs5CDDnhz1x8" target="_blank" class="inline-flex items-center gap-2 bg-harvest text-cream px-8 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-[#d14d0f] transition-all">
+                    Get Directions <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+            <div class="relative aspect-video rounded-3xl overflow-hidden border-2 border-cream/10 group">
+                <img src="https://scontent.fcrk1-3.fna.fbcdn.net/v/t39.30808-6/604747149_122236979420046144_5579406941990011820_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHs_TehTFO9OTe_Sz-7gAPizAdyvFh8ji7MB3K8WHyOLmwHgN17GVRM3q83C0FZLMjAdLLY67RX6DmmOfgwO7S3&_nc_ohc=o1VZgQDlFjAQ7kNvwE050Hm&_nc_oc=Adkj6Co5CduxwRrTJOK7Dtp81ozoOADc9YTJo3wl6rEQrYbBJR1igOszwbJvO5YxJVA&_nc_zt=23&_nc_ht=scontent.fcrk1-3.fna&_nc_gid=D3YCZN7lYZ1K4ySZil0AIQ&oh=00_AfpMJZ_QrN_R9TWvmEynbXFJDZfcDHjJ6kUcNOc4zZmwnA&oe=69798F6F" alt="Landscape" class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700">
+                <div class="absolute inset-0 bg-forest/40"></div>
+                <div class="absolute bottom-6 left-6 bg-black/80 backdrop-blur-md p-4 rounded-2xl border border-cream/20">
+                    <span class="text-cream text-xs font-bold uppercase tracking-[0.2em]">DFCCI Pangasinan</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-24 pb-12 px-6 border-t border-cream/5 text-center bg-forest">
+        <div class="max-w-4xl mx-auto">
+            <div class="h-16 mx-auto mb-8 flex justify-center">
+    		<img src="HD LOGO OUTLINE with laman white.png" alt="DFCCI Logo" class="h-full object-contain">
+	   </div>
+
+            <h3 class="text-cream text-3xl font-black uppercase tracking-tighter mb-4">DOOR OF FAITH CHRISTIAN CHURCH INT'L - PANGASINAN</h3>
+            <p class="text-cream/40 uppercase tracking-[0.4em] text-xs mb-12">25 Years of Faithfulness • Since 2001</p>
+            <div class="flex justify-center gap-8 mb-16">
+                <a href="https://www.facebook.com/DFCCIPANG" target="_blank" class="text-cream/60 hover:text-harvest transition-colors uppercase font-bold text-xs tracking-widest">Main Facebook Page</a>
+                <a href="https://www.facebook.com/profile.php?id=61551384331189" target="_blank" class="text-cream/60 hover:text-harvest transition-colors uppercase font-bold text-xs tracking-widest">DFCCI Media Facebook Page</a>
+            </div>
+            <div class="pt-8 border-t border-cream/5 text-[10px] text-cream/20 font-mono uppercase tracking-widest">
+                © 2026 DFCCI Silver Jubilee • Soli Deo Gloria
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-forest/80', 'backdrop-blur-md', 'py-4');
+                navbar.classList.remove('bg-transparent', 'py-6');
+            } else {
+                navbar.classList.remove('bg-forest/80', 'backdrop-blur-md', 'py-4');
+                navbar.classList.add('bg-transparent', 'py-6');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            menuBtn.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+            lucide.createIcons();
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.innerHTML = '<i data-lucide="menu"></i>';
+                lucide.createIcons();
+            });
+        });
+
+        // Countdown Timer Logic
+        const targetDate = new Date("February 8, 2026 08:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) return;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
