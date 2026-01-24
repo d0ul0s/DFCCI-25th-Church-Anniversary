@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | DFCCI Silver Jubilee</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#062421',
+                        harvest: '#f26522',
+                        cream: '#f3e5ab',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #062421;
+            color: #f3e5ab;
+        }
+        .font-black { font-weight: 900; }
+        .tracking-tighter { letter-spacing: -0.05em; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #062421; }
+        ::-webkit-scrollbar-thumb { background: #f26522; border-radius: 10px; }
+
+        .gradient-text {
+            background: linear-gradient(to bottom, #f3e5ab, #f3e5ab, #f26522);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-harvest selection:text-cream">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-forest/80 backdrop-blur-md border-b border-cream/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <!-- Back Button -->
+            <a href="index.html"
+            class="flex items-center gap-2 text-cream/80 hover:text-harvest font-bold uppercase tracking-widest text-xs transition">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                Back to Home
+            </a>
+
+            <!-- Center Title / Emblem -->
+            <div class="flex items-center gap-3">
+                <img src="logo.png" class="h-8 object-contain" alt="DFCCI Logo">
+                <span class="font-black tracking-tight uppercase text-sm">
+                    Photo Gallery
+                </span>
+            </div>
+
+            <!-- Spacer (keeps center aligned) -->
+            <div class="w-[90px]"></div>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 md:pt-38 pb-12 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <p class="text-cream/60 uppercase tracking-[0.4em] text-xs">Capturing His Grace</p>
+        </div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-harvest/5 to-transparent pointer-events-none"></div>
+    </section>
+
+    <!-- Photo Grid -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div id="gallery"
+            class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-24 pb-12 px-6 border-t border-cream/5 text-center bg-forest">
+        <div class="max-w-4xl mx-auto">
+            <div class="h-16 mx-auto mb-8 flex justify-center">
+    		<img src="logo.png" alt="DFCCI Logo" class="h-full object-contain">
+	   </div>
+
+            <h3 class="text-cream text-3xl font-black uppercase tracking-tighter mb-4">DOOR OF FAITH CHRISTIAN CHURCH INT'L - PANGASINAN</h3>
+            <p class="text-cream/40 uppercase tracking-[0.4em] text-xs mb-12">25 Years of Faithfulness • Since 2001</p>
+            <div class="flex justify-center gap-8 mb-16">
+                <a href="https://www.facebook.com/DFCCIPANG" target="_blank" class="text-cream/60 hover:text-harvest transition-colors uppercase font-bold text-xs tracking-widest">Main Facebook Page</a>
+                <a href="https://www.facebook.com/profile.php?id=61551384331189" target="_blank" class="text-cream/60 hover:text-harvest transition-colors uppercase font-bold text-xs tracking-widest">DFCCI Media Facebook Page</a>
+            </div>
+            <div class="pt-8 border-t border-cream/5 text-[10px] text-cream/20 font-mono uppercase tracking-widest">
+                © 2026 DFCCI 25th Church Anniversary • Soli Deo Gloria
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox"
+    class="fixed inset-0 bg-black/90 backdrop-blur-sm hidden
+            items-center justify-center z-[999] p-4">
+
+    <img id="lightbox-img"
+        class="max-w-full max-h-full rounded-xl shadow-2xl border border-cream/20">
+
+    <button id="lightbox-close"
+        class="absolute top-6 right-6 text-cream text-3xl font-black hover:text-harvest">
+        &times;
+    </button>
+    </div>
+
+    <!-- Logic -->
+    <script>
+        // ===== GALLERY IMAGE LIST =====
+        const galleryImages = [
+            "event1.jpg",
+            "event2.jpg",
+            "event3.jpg",
+            "event4.jpg",
+            "event5.jpg",
+            "event6.jpg"
+        ];
+
+        // ===== BUILD GALLERY =====
+        const gallery = document.getElementById("gallery");
+
+        galleryImages.forEach(file => {
+            const link = document.createElement("a");
+            link.href = "#";
+            link.className =
+                "group block break-inside-avoid overflow-hidden rounded-2xl " +
+                "border border-cream/10 bg-black/40 " +
+                "hover:shadow-xl hover:shadow-harvest/10 transition gallery-item";
+
+            link.setAttribute("data-full", "images/" + file);
+
+            const img = document.createElement("img");
+            img.src = "images/" + file;
+            img.alt = "Event Photo";
+            img.className =
+                "w-full h-auto object-cover transition-transform duration-500 " +
+                "group-hover:scale-[1.03] opacity-95";
+
+            link.appendChild(img);
+            gallery.appendChild(link);
+        });
+        // ===== NAVBAR LOGIC =====
+        lucide.createIcons();
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-forest/80', 'backdrop-blur-md', 'py-4');
+                navbar.classList.remove('bg-transparent', 'py-6');
+            } else {
+                navbar.classList.remove('bg-forest/80', 'backdrop-blur-md', 'py-4');
+                navbar.classList.add('bg-transparent', 'py-6');
+            }
+        });
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            menuBtn.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+            lucide.createIcons();
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.innerHTML = '<i data-lucide="menu"></i>';
+                lucide.createIcons();
+            });
+        });
+
+        // ===== LIGHTBOX LOGIC =====
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxClose = document.getElementById("lightbox-close");
+
+        // Open image
+        document.addEventListener("click", e => {
+            const item = e.target.closest(".gallery-item");
+            if (!item) return;
+
+            e.preventDefault();
+            lightboxImg.src = item.getAttribute("data-full");
+            lightbox.classList.remove("hidden");
+            lightbox.classList.add("flex");
+            document.body.style.overflow = "hidden";
+        });
+
+        // Close via button
+        lightboxClose.addEventListener("click", closeLightbox);
+
+        // Close by clicking background
+        lightbox.addEventListener("click", e => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        function closeLightbox() {
+            lightbox.classList.add("hidden");
+            lightbox.classList.remove("flex");
+            document.body.style.overflow = "";
+        }
+    </script>
+</body>
+</html>
