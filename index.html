@@ -344,12 +344,27 @@
                         </div>
                     </div>
                 </div>
-                <a 
-				  href="https://www.google.com/maps/dir/?api=1&destination=Sapdaan-Tocok,San+Fabian,Pangasinan"
-				  class="inline-flex items-center gap-2 bg-harvest text-cream px-8 py-4 rounded-full font-bold uppercase tracking-widest"
-				>
-				  Get Directions <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-				</a>
+                <div class="flex flex-col sm:flex-row gap-4">
+
+				  <!-- Open Maps App (Best for Android) -->
+				  <a
+				    href="geo:0,0?q=Sapdaan+Tocok+San+Fabian+Pangasinan"
+				    class="inline-flex justify-center items-center gap-2 bg-harvest text-cream px-8 py-4 rounded-full font-bold uppercase tracking-widest"
+				  >
+				    Open in Maps App
+				    <i data-lucide="map"></i>
+				  </a>
+				
+				  <!-- Open in Browser (Best for iPhone / fallback) -->
+				  <a
+				    href="https://maps.google.com/?q=Sapdaan+Tocok+San+Fabian+Pangasinan"
+				    class="inline-flex justify-center items-center gap-2 border border-harvest text-harvest px-8 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-harvest hover:text-cream transition"
+				  >
+				    Open in Google Maps
+				    <i data-lucide="external-link"></i>
+				  </a>
+				
+				</div>
             </div>
             <div class="relative aspect-video rounded-3xl overflow-hidden border-2 border-cream/10 group">
                 <img src="IMG_1826.JPEG">
@@ -476,6 +491,7 @@
     </script>
 </body>
 </html>
+
 
 
 
