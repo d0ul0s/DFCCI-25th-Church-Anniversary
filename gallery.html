@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DFCCI 25th CA | Gallery</title>
-	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="icon" type="image/png" href="img/favicon.png">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter & JetBrains Mono -->
@@ -65,7 +65,7 @@
 
             <!-- Center Title / Emblem -->
             <div class="flex items-center gap-3">
-                <img src="logo.png" class="h-8 object-contain" alt="DFCCI Logo">
+                <img src="img/logo.png" class="h-8 object-contain" alt="DFCCI Logo">
                 <span class="font-black tracking-tight uppercase text-sm">
                     Photo Gallery
                 </span>
@@ -96,7 +96,7 @@
     <footer class="pt-24 pb-12 px-6 border-t border-cream/5 text-center bg-forest">
         <div class="max-w-4xl mx-auto">
             <div class="h-16 mx-auto mb-8 flex justify-center">
-    		<img src="logo.png" alt="DFCCI Logo" class="h-full object-contain">
+    		<img src="img/logo.png" alt="DFCCI Logo" class="h-full object-contain">
 	   </div>
 
             <h3 class="text-cream text-3xl font-black uppercase tracking-tighter mb-4">DOOR OF FAITH CHRISTIAN CHURCH INT'L - PANGASINAN</h3>
@@ -129,12 +129,12 @@
     <script>
         // ===== GALLERY IMAGE LIST =====
         const galleryImages = [
-            "event1.jpg",
-            "event2.jpg",
-            "event3.jpg",
-            "event4.jpg",
-            "event5.jpg",
-            "event6.jpg"
+            "AnnivPix1.jpg",
+            "AnnivPix2.jpg",
+            "AnnivPix3.jpg",
+            "AnnivPix4.jpg",
+            "AnnivPix5.jpg",
+            "AnnivPix6.jpg"
         ];
 
         lucide.createIcons();
@@ -150,10 +150,10 @@
                 "border border-cream/10 bg-black/40 " +
                 "hover:shadow-xl hover:shadow-harvest/10 transition gallery-item";
 
-            link.setAttribute("data-full", "images/" + file);
+            link.setAttribute("data-full", "AnnivPix/" + file);
 
             const img = document.createElement("img");
-            img.src = "images/" + file;
+            img.src = "AnnivPix/" + file;
             img.alt = "Event Photo";
             img.className =
                 "w-full h-auto object-cover transition-transform duration-500 " +
