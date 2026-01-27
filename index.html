@@ -17,9 +17,11 @@
             theme: {
                 extend: {
                     colors: {
-                        forest: '#062421',
-                        harvest: '#f26522',
-                        cream: '#f3e5ab',
+                        forest: '#0A3F43',   // Primary Dark
+                        teal: '#0F5C60',     // Primary
+                        harvest: '#E85C1A',  // Accent
+                        saffron: '#F2C94C',  // Accent Soft
+                        cream: '#F3E5AB',    // Text Light
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -32,8 +34,8 @@
 
     <style>
         body {
-            background-color: #062421;
-            color: #f3e5ab;
+            background-color: #0A3F43; /* Primary Dark */
+            color: #F3E5AB;           /* Vanilla */
         }
         .font-black { font-weight: 900; }
         .tracking-tighter { letter-spacing: -0.05em; }
@@ -52,7 +54,7 @@
         ::-webkit-scrollbar-thumb { background: #f26522; border-radius: 10px; }
 
         .gradient-text {
-            background: linear-gradient(to bottom, #f3e5ab, #f3e5ab, #f26522);
+           background: linear-gradient(to bottom, #F3E5AB, #F3E5AB, #E85C1A);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -200,6 +202,44 @@
                                 >
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Color Palette -->
+                    <div class="mt-4 space-y-3">
+                        <div class="text-cream text-xs font-bold uppercase tracking-widest">
+                            Official Color Palette
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="text-center">
+                                <div class="h-12 rounded-xl bg-[#0F5C60] border border-cream/20"></div>
+                                <div class="mt-1 text-[10px] font-mono text-cream/60">#0F5C60</div>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="h-12 rounded-xl bg-[#0A3F43] border border-cream/20"></div>
+                                <div class="mt-1 text-[10px] font-mono text-cream/60">#0A3F43</div>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="h-12 rounded-xl bg-[#E85C1A] border border-cream/20"></div>
+                                <div class="mt-1 text-[10px] font-mono text-cream/60">#E85C1A</div>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="h-12 rounded-xl bg-[#F2C94C] border border-cream/20"></div>
+                                <div class="mt-1 text-[10px] font-mono text-cream/60">#F2C94C</div>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="h-12 rounded-xl bg-[#F3E5AB] border border-cream/20"></div>
+                                <div class="mt-1 text-[10px] font-mono text-cream/60">#F3E5AB</div>
+                            </div>
+                        </div>
+
+                        <p class="text-[10px] text-cream/40 leading-relaxed">
+                            Wearing these colors during the anniversary celebration is encouraged to show unity and festivity. But remember, the most important thing is to come with a joyful heart ready to celebrate God's faithfulness!
+                        </p>
                     </div>
 
                     <!-- Spotify Link -->
