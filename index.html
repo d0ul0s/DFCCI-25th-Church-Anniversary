@@ -51,10 +51,13 @@
     </script>
 
     <style>
-        body {
+        html, body {
             background-color: #062421;
             color: #FDF8E1;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Clamps the horizontal axis */
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         /* Organic Texture Overlay */
@@ -155,7 +158,7 @@
     </nav>
 
     <!-- Cinematic Hero Section -->
-    <section id="home" class="relative overflow-x-clip overflow-y-visible min-h-screen flex flex-col items-center justify-center pt-20 px-6 vine-pattern">
+    <section id="home" class="relative overflow-hidden min-h-screen flex flex-col items-center justify-center pt-20 px-6 vine-pattern">
           <!-- decorative layer -->
         <div class="absolute inset-0 pointer-events-none overflow-hidden">
             <div class="absolute top-[-10%] left-[-5%] w-[60vw] h-[60vw] bg-teal/10 rounded-full blur-[150px] animate-pulse-slow"></div>
@@ -209,10 +212,10 @@
     </section>
 
     <!-- Legacy / Vision Section -->
-    <section id="vision" class="py-12 px-6 relative">
+    <section id="vision" class="py-12 px-6 relative overflow-hidden">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-20 items-start lg:items-center">
-                <div class="relative">
+                <div class="relative overflow-hidden lg:overflow-visible">
                     <div class="absolute -top-38 -right-10 text-[250px] font-black text-cream/5 select-none pointer-events-none">25</div>
                     <h2 class="text-5xl md:text-7xl font-black text-cream uppercase tracking-tighter mb-8 leading-tight">
                         A Quarter Century of <span class="text-harvest">Grace.</span>
