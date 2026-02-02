@@ -104,6 +104,10 @@
 
         /* Smooth Reveal Animation Hooks */
         .reveal { opacity: 0; transform: translateY(30px); }
+
+        * {
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-harvest selection:text-white">
@@ -151,10 +155,12 @@
     </nav>
 
     <!-- Cinematic Hero Section -->
-    <section id="home" class="relative overflow-hidden min-h-screen flex flex-col items-center justify-center pt-20 px-6 vine-pattern">
-        <!-- Background Lighting -->
-        <div class="absolute top-[-10%] left-[-5%] w-[60vw] h-[60vw] bg-teal/10 rounded-full blur-[150px] animate-pulse-slow"></div>
-        <div class="absolute bottom-[5%] right-[-5%] w-[40vw] h-[40vw] bg-harvest/5 rounded-full blur-[120px]"></div>
+    <section id="home" class="relative overflow-x-clip overflow-y-visible min-h-screen flex flex-col items-center justify-center pt-20 px-6 vine-pattern">
+          <!-- decorative layer -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="absolute top-[-10%] left-[-5%] w-[60vw] h-[60vw] bg-teal/10 rounded-full blur-[150px] animate-pulse-slow"></div>
+            <div class="absolute bottom-[5%] right-[-5%] w-[40vw] h-[40vw] bg-harvest/5 rounded-full blur-[120px]"></div>
+        </div>
 
         <div class="relative z-10 text-center max-w-5xl">
             <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full glass-card border-harvest/20 text-harvest text-[10px] font-extrabold uppercase tracking-[0.5em] mb-12 reveal mt-2">
@@ -238,7 +244,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             
             <!-- Resources Sidebar (Sticky) -->
-            <div class="lg:col-span-4 lg:sticky lg:top-32 h-fit space-y-8 reveal">
+            <div class="lg:col-span-4 lg:sticky lg:top-32 h-fit space-y-8 reveal max-w-full overflow-x-clip">
                 <div class="p-8 rounded-[1rem] glass-card border-white/5 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 p-4 opacity-10 transition-opacity group-hover:opacity-20">
                         <i data-lucide="leaf" class="w-24 h-24 text-harvest"></i>
