@@ -176,18 +176,10 @@
         gsap.registerPlugin(ScrollTrigger);
 
         // ===== GALLERY IMAGE LIST =====
-        const galleryImages = [
-            "AnnivPix1.JPG",
-            "AnnivPix2.JPG",
-            "AnnivPix3.JPG",
-            "AnnivPix4.JPG",
-            "AnnivPix5.JPG",
-            "AnnivPix6.JPG",
-			"AnnivPix7.JPG",
-            "AnnivPix8.JPG",
-            "AnnivPix9.JPG",
-            "AnnivPix10.JPG"
-        ];
+		const galleryImages = Array.from(
+		  { length: 328 },
+		  (_, i) => `AnnivPix${i + 1}.jpg`
+		);
 
         lucide.createIcons();
 
@@ -260,5 +252,6 @@
     </script>
 </body>
 </html>
+
 
 
