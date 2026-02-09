@@ -180,7 +180,7 @@
 
         <div class="relative z-10 text-center max-w-5xl">
             <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full glass-card border-harvest/20 text-harvest text-[10px] font-extrabold uppercase tracking-[0.5em] mb-12 reveal mt-2">
-                We are inviting you to DFCCI's 25th Church Anniversary!
+                Celebrating 25 Years of God's Faithfulness!
             </div>
             
             <!-- Emblem Stage -->
@@ -628,33 +628,42 @@
             link.onclick = () => toggleMenu(false);
         });
 
-        // Advanced Countdown Engine
+        // Advanced Count-up Engine
         const targetDate = new Date("February 8, 2026 08:00:00").getTime();
 
-        const updateCountdown = () => {
+        const updateCountup = () => {
             const now = new Date().getTime();
-            const distance = targetDate - now;
+    
+            // We reverse the math: Now minus Target Date
+            const distance = now - targetDate;
 
+            // If the date is still in the future (optional safety check)
             if (distance < 0) {
-                document.querySelector('.grid-cols-4').innerHTML = `<div class="col-span-4 py-4 text-harvest font-black text-2xl uppercase tracking-widest">Today is the Day!</div>`;
-                return;
-            }
+            const futureDist = targetDate - now;
+            updateDisplay(futureDist);
+            return;
+  }
 
-            const timeUnits = {
-                days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-                seconds: Math.floor((distance % (1000 * 60)) / 1000)
-            };
+    updateDisplay(distance);
+};
 
-            Object.entries(timeUnits).forEach(([unit, value]) => {
-                const element = document.getElementById(unit);
-                if (element) element.innerText = String(value).padStart(2, '0');
-            });
-        };
+const updateDisplay = (ms) => {
+    const timeUnits = {
+        days: Math.floor(ms / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((ms % (1000 * 60)) / 1000)
+    };
 
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+    Object.entries(timeUnits).forEach(([unit, value]) => {
+        const element = document.getElementById(unit);
+        if (element) element.innerText = String(value).padStart(2, '0');
+    });
+};
+
+setInterval(updateCountup, 1000);
+updateCountup();
+
 
         // Subtle Parallax for Hero Emblem
         window.addEventListener('mousemove', (e) => {
@@ -668,5 +677,6 @@
     </script>
 </body>
 </html>
+
 
 
